@@ -112,6 +112,12 @@ a {
   padding: 10px;
 }
 
+.form-row input:focus {
+  border: 1px solid #66a1be;
+  box-shadow: 2px 2px 2px rgb(106, 143, 199, 0.5);
+  outline: none;
+}
+
 .form-footer {
   flex-grow: 1;
   background-color: #e5e7eb;

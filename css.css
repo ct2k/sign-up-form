@@ -133,3 +133,8 @@ a {
   margin-bottom: 20px;
   padding: 12px;
 }
+
+input:invalid:not(:focus):not(:placeholder-shown),
+input:invalid:focus:not(:placeholder-shown) {
+  border: 1px solid red;
+}

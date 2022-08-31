@@ -71,7 +71,13 @@
         </div>
         <div class="form-row">
           <label for="user-email">EMAIL</label>
-          <input type="email" name="user-email" id="user-email" />
+          <input
+            type="email"
+            name="user-email"
+            id="user-email"
+            required
+            placeholder=" "
+          />
         </div>
         <div class="form-row">
           <label for="user-phone">PHONE NUMBER</label>
@@ -84,6 +90,9 @@
             name="user-password"
             id="user-password"
             class="error"
+            required
+            placeholder=" "
+            minlength="4"
           />
         </div>
         <div class="form-row">
@@ -93,6 +102,9 @@
             name="user-confirm-password"
             id="user-confirm-password"
             class="error"
+            required
+            placeholder=" "
+            minlength="4"
           />
         </div>
       </form>

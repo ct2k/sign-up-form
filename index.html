@@ -55,7 +55,12 @@
           nesciunt nulla laborum voluptas aperiam illo!
         </p>
       </header>
-      <form class="gridcontainer" action="example.com/path" method="post">
+      <form
+        class="gridcontainer"
+        action="example.com/path"
+        method="post"
+        id="my-form"
+      >
         <div class="form-row">
           <label for="first-name">FIRST NAME</label>
           <input type="text" name="first-name" id="first-name" />
@@ -92,7 +97,9 @@
         </div>
       </form>
       <footer class="form-footer">
-        <button class="submit-form" type="submit">Create Account</button>
+        <button class="submit-form" type="submit" form="my-form">
+          Create Account
+        </button>
         <p>Already have an account? Log in</p>
       </footer>
     </div>

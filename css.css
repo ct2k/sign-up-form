@@ -138,3 +138,23 @@ input:invalid:not(:focus):not(:placeholder-shown),
 input:invalid:focus:not(:placeholder-shown) {
   border: 1px solid red;
 }
+
+.preventbump {
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  width: 100%;
+  background-color: #900;
+  color: #e5e7eb;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+  font-size: 80%;
+  font-weight: 600;
+  padding: 0;
+}
+
+.error.active {
+  padding: 0.3em;
+}

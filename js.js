@@ -32,10 +32,16 @@ confirmPassEle.addEventListener('input', function () {
 });
 
 formEle.addEventListener('submit', function (event) {
-  if (!userPassEle.validity.valid) {
+  if (
+    !userPassEle.validity.valid ||
+    userPassEle.value !== confirmPassEle.value
+  ) {
     showError();
     event.preventDefault();
-  } else if (!confirmPassEle.validity.valid) {
+  } else if (
+    !confirmPassEle.validity.valid ||
+    confirmPassEle.value !== userPassEle.value
+  ) {
     showError2();
     event.preventDefault();
   }
@@ -46,6 +52,8 @@ function showError() {
     errorEle.textContent = 'You need to enter a password.';
   } else if (userPassEle.validity.tooShort) {
     errorEle.textContent = `Password should be at least ${userPassEle.minLength} characters; you entered ${userPassEle.value.length}.`;
+  } else if (userPassEle.value !== confirmPassEle.value) {
+    errorEle.textContent = 'Passwords do not match';
   }
 
   errorEle.className = 'error active';
@@ -56,6 +64,8 @@ function showError2() {
     errorEle2.textContent = 'You need to enter a password.';
   } else if (confirmPassEle.validity.tooShort) {
     errorEle2.textContent = `Password should be at least ${confirmPassEle.minLength} characters; you entered ${confirmPassEle.value.length}.`;
+  } else if (confirmPassEle.value !== userPassEle.value) {
+    errorEle2.textContent = 'Passwords do not match';
   }
 
   errorEle2.className = 'error2 active';

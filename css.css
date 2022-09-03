@@ -143,7 +143,12 @@ input:invalid:focus:not(:placeholder-shown) {
   position: relative;
 }
 
-.error {
+.preventbump2 {
+  position: relative;
+}
+
+.error,
+.error2 {
   position: absolute;
   width: 100%;
   background-color: #900;
@@ -155,6 +160,7 @@ input:invalid:focus:not(:placeholder-shown) {
   padding: 0;
 }
 
-.error.active {
+.error.active,
+.error2.active {
   padding: 0.3em;
 }

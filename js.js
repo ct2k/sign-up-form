@@ -9,6 +9,7 @@ const confirmPassEle = document.querySelector(
   'input[id="user-confirm-password"]'
 );
 const errorEle = document.querySelector('.error');
+const errorEle2 = document.querySelector('.error2');
 
 // Event Listeners
 
@@ -21,9 +22,21 @@ userPassEle.addEventListener('input', function () {
   }
 });
 
+confirmPassEle.addEventListener('input', function () {
+  if (confirmPassEle.validity.valid) {
+    errorEle2.textContent = '';
+    errorEle2.className = 'error2';
+  } else {
+    showError2();
+  }
+});
+
 formEle.addEventListener('submit', function (event) {
   if (!userPassEle.validity.valid) {
     showError();
+    event.preventDefault();
+  } else if (!confirmPassEle.validity.valid) {
+    showError2();
     event.preventDefault();
   }
 });
@@ -36,4 +49,14 @@ function showError() {
   }
 
   errorEle.className = 'error active';
+}
+
+function showError2() {
+  if (confirmPassEle.validity.valueMissing) {
+    errorEle2.textContent = 'You need to enter a password.';
+  } else if (confirmPassEle.validity.tooShort) {
+    errorEle2.textContent = `Password should be at least ${confirmPassEle.minLength} characters; you entered ${confirmPassEle.value.length}.`;
+  }
+
+  errorEle2.className = 'error2 active';
 }
